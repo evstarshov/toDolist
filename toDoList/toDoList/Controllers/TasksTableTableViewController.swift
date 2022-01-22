@@ -9,37 +9,72 @@ import UIKit
 
 class TasksTableTableViewController: UITableViewController {
     
+    @IBOutlet weak var AddFolder: UIBarButtonItem!
+    
+    private let folderFactory = FolderViewModelFactory()
+    private var folderViewModels: [FolderViewModel] = [FolderViewModel(name: "test name", description: "test description")]
+    
     var folders: [TaskFolder] = []
     var tasks: [MainTask] = []
     var subTasks: [SubTask] = []
         
     override func viewDidLoad() {
         super.viewDidLoad()
-
-
+        tableView.reloadData()
+        print("Taking Folders")
+        makeSection()
+        //folderViewModels = { folderFactory.constructViewModels(from: folders) }()
+        tableView.reloadData()
     }
+    
+
 
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return folders.count
-    }
+//    override func numberOfSections(in tableView: UITableView) -> Int {
+//        return folderViewModels.count
+//    }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return folders.count
+        return folderViewModels.count
+    }
+    
+    @IBAction func addFolderButtonTapped(_ sender: UIBarButtonItem!) {
+        addFolder()
+        print("Folder appended")
+        makeSection()
+        tableView.reloadData()
+    }
+    
+    private func addFolder() {
+        let textController = UIAlertController(title: "Enter folder name", message: nil, preferredStyle: .alert)
+        textController.addTextField()
+        let submitAction = UIAlertAction(title: "Submit", style: .default) { [unowned textController] _ in
+            let answer = textController.textFields![0]
+            self.folders.append(TaskFolder(name: answer.text ?? "no name"))
+            self.folderViewModels = self.folderFactory.constructViewModels(from: self.folders)
+            print("Appending folder \(answer.text ?? "empty name")")
+        }
+        textController.addAction(submitAction)
+        present(textController, animated: true)
+        tableView.reloadData()
+    }
+    
+    private func makeSection() {
+        print("Making section")
+        let folderNib = UINib(nibName: "FolderTableViewCell", bundle: nil)
+        self.tableView.register(folderNib, forCellReuseIdentifier: "folderCell")
     }
 
-    /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
 
-        // Configure the cell...
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "folderCell", for: indexPath) as! FolderTableViewCell
+
+        cell.configureFolder(with: folderViewModels[indexPath.row])
 
         return cell
     }
-    */
+   
 
     /*
     // Override to support conditional editing of the table view.

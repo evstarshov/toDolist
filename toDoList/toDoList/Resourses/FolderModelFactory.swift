@@ -10,7 +10,7 @@ import Foundation
 class TaskFolder: TaskProtokol {
     
     var name: String
-    var tasks: [MainTask] = []
+    var tasks: [TaskProtokol] = []
     
     var description: String {
         let taskNames = tasks.compactMap {$0.description}.joined(separator: ",")
