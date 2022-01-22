@@ -40,10 +40,8 @@ class TasksTableTableViewController: UITableViewController {
     }
     
     @IBAction func addFolderButtonTapped(_ sender: UIBarButtonItem!) {
-        addFolder()
         print("Folder appended")
-        makeSection()
-        tableView.reloadData()
+        addFolder()
     }
     
     private func addFolder() {
@@ -54,10 +52,10 @@ class TasksTableTableViewController: UITableViewController {
             self.folders.append(TaskFolder(name: answer.text ?? "no name"))
             self.folderViewModels = self.folderFactory.constructViewModels(from: self.folders)
             print("Appending folder \(answer.text ?? "empty name")")
+            self.tableView.reloadData()
         }
         textController.addAction(submitAction)
         present(textController, animated: true)
-        tableView.reloadData()
     }
     
     private func makeSection() {
