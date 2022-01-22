@@ -33,3 +33,23 @@ class TaskFolder: TaskProtokol {
     
     
 }
+
+
+struct FolderViewModel {
+    let name: String
+    let description: String
+}
+
+
+
+final class FolderViewModelFactory {
+    func constructViewModels(from folders: [TaskFolder]) -> [FolderViewModel] {
+        return folders.compactMap(self.makeFolderViewModel)
+    }
+    
+    private func makeFolderViewModel(from folder: TaskFolder) -> FolderViewModel {
+        let folderName = String(folder.name)
+        let folderDescription = String(folder.description)
+        return FolderViewModel(name: folderName, description: folderDescription)
+    }
+}
