@@ -16,12 +16,15 @@
 		3AAB2D22279BE912009C8047 /* toDoListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAB2D21279BE912009C8047 /* toDoListTests.swift */; };
 		3AAB2D2C279BE912009C8047 /* toDoListUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAB2D2B279BE912009C8047 /* toDoListUITests.swift */; };
 		3AAB2D2E279BE912009C8047 /* toDoListUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAB2D2D279BE912009C8047 /* toDoListUITestsLaunchTests.swift */; };
-		3AAB2D3D279BEBC9009C8047 /* TasksTableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAB2D3B279BEBC9009C8047 /* TasksTableTableViewController.swift */; };
+		3AAB2D3D279BEBC9009C8047 /* FolderTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAB2D3B279BEBC9009C8047 /* FolderTableViewController.swift */; };
 		3AAB2D41279BEC17009C8047 /* TasksProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAB2D40279BEC17009C8047 /* TasksProtocol.swift */; };
 		3AAB2D43279BED51009C8047 /* TaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAB2D42279BED51009C8047 /* TaskModel.swift */; };
 		3AAB2D45279BEFEF009C8047 /* FolderModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAB2D44279BEFEF009C8047 /* FolderModelFactory.swift */; };
 		3AAB2D47279BF55F009C8047 /* FolderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AAB2D46279BF55F009C8047 /* FolderTableViewCell.xib */; };
 		3AAB2D49279BF9C8009C8047 /* FolderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAB2D48279BF9C8009C8047 /* FolderTableViewCell.swift */; };
+		3AAB2D50279C2B5D009C8047 /* TaskTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAB2D4F279C2B5D009C8047 /* TaskTableViewController.swift */; };
+		3AAB2D53279C37C4009C8047 /* TaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAB2D51279C37C3009C8047 /* TaskTableViewCell.swift */; };
+		3AAB2D54279C37C4009C8047 /* TaskTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AAB2D52279C37C3009C8047 /* TaskTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,12 +58,15 @@
 		3AAB2D27279BE912009C8047 /* toDoListUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = toDoListUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AAB2D2B279BE912009C8047 /* toDoListUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = toDoListUITests.swift; sourceTree = "<group>"; };
 		3AAB2D2D279BE912009C8047 /* toDoListUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = toDoListUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		3AAB2D3B279BEBC9009C8047 /* TasksTableTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksTableTableViewController.swift; sourceTree = "<group>"; };
+		3AAB2D3B279BEBC9009C8047 /* FolderTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderTableViewController.swift; sourceTree = "<group>"; };
 		3AAB2D40279BEC17009C8047 /* TasksProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksProtocol.swift; sourceTree = "<group>"; };
 		3AAB2D42279BED51009C8047 /* TaskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskModel.swift; sourceTree = "<group>"; };
 		3AAB2D44279BEFEF009C8047 /* FolderModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderModelFactory.swift; sourceTree = "<group>"; };
 		3AAB2D46279BF55F009C8047 /* FolderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FolderTableViewCell.xib; sourceTree = "<group>"; };
 		3AAB2D48279BF9C8009C8047 /* FolderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderTableViewCell.swift; sourceTree = "<group>"; };
+		3AAB2D4F279C2B5D009C8047 /* TaskTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTableViewController.swift; sourceTree = "<group>"; };
+		3AAB2D51279C37C3009C8047 /* TaskTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTableViewCell.swift; sourceTree = "<group>"; };
+		3AAB2D52279C37C3009C8047 /* TaskTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TaskTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,10 +149,9 @@
 		3AAB2D3A279BEB68009C8047 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				3AAB2D4C279C2B2A009C8047 /* Task */,
+				3AAB2D4B279C2B16009C8047 /* Folder */,
 				3AAB2D0E279BE911009C8047 /* ViewController.swift */,
-				3AAB2D3B279BEBC9009C8047 /* TasksTableTableViewController.swift */,
-				3AAB2D48279BF9C8009C8047 /* FolderTableViewCell.swift */,
-				3AAB2D46279BF55F009C8047 /* FolderTableViewCell.xib */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -159,6 +164,26 @@
 				3AAB2D44279BEFEF009C8047 /* FolderModelFactory.swift */,
 			);
 			path = Resourses;
+			sourceTree = "<group>";
+		};
+		3AAB2D4B279C2B16009C8047 /* Folder */ = {
+			isa = PBXGroup;
+			children = (
+				3AAB2D3B279BEBC9009C8047 /* FolderTableViewController.swift */,
+				3AAB2D48279BF9C8009C8047 /* FolderTableViewCell.swift */,
+				3AAB2D46279BF55F009C8047 /* FolderTableViewCell.xib */,
+			);
+			path = Folder;
+			sourceTree = "<group>";
+		};
+		3AAB2D4C279C2B2A009C8047 /* Task */ = {
+			isa = PBXGroup;
+			children = (
+				3AAB2D4F279C2B5D009C8047 /* TaskTableViewController.swift */,
+				3AAB2D51279C37C3009C8047 /* TaskTableViewCell.swift */,
+				3AAB2D52279C37C3009C8047 /* TaskTableViewCell.xib */,
+			);
+			path = Task;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -269,6 +294,7 @@
 				3AAB2D14279BE912009C8047 /* Assets.xcassets in Resources */,
 				3AAB2D12279BE911009C8047 /* Main.storyboard in Resources */,
 				3AAB2D47279BF55F009C8047 /* FolderTableViewCell.xib in Resources */,
+				3AAB2D54279C37C4009C8047 /* TaskTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -295,10 +321,12 @@
 			files = (
 				3AAB2D43279BED51009C8047 /* TaskModel.swift in Sources */,
 				3AAB2D0F279BE911009C8047 /* ViewController.swift in Sources */,
+				3AAB2D53279C37C4009C8047 /* TaskTableViewCell.swift in Sources */,
 				3AAB2D0B279BE911009C8047 /* AppDelegate.swift in Sources */,
 				3AAB2D49279BF9C8009C8047 /* FolderTableViewCell.swift in Sources */,
 				3AAB2D0D279BE911009C8047 /* SceneDelegate.swift in Sources */,
-				3AAB2D3D279BEBC9009C8047 /* TasksTableTableViewController.swift in Sources */,
+				3AAB2D3D279BEBC9009C8047 /* FolderTableViewController.swift in Sources */,
+				3AAB2D50279C2B5D009C8047 /* TaskTableViewController.swift in Sources */,
 				3AAB2D45279BEFEF009C8047 /* FolderModelFactory.swift in Sources */,
 				3AAB2D41279BEC17009C8047 /* TasksProtocol.swift in Sources */,
 			);
